@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-  <app-header></app-header>
-    <app-new-quote @newQuote="addQuote"></app-new-quote>
-    <app-grid @deleteQuote="removeQuote" :quotes="quotes"></app-grid>
+  <app-header :maxQuotes="maxQuotes" :quoteCount="quotes.length"/>
+    <app-new-quote @newQuote="addQuote"/>
+    <app-grid @deleteQuote="removeQuote" :quotes="quotes"/>
     <div v-if="this.quotes.length" class="row">
       <div class="col-sm-12 text-center">
         <div class="alert alert-info">Info: Click on a quote to delete it</div>
