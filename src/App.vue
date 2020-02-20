@@ -1,14 +1,17 @@
 <template>
   <div class="container">
+    <app-new-quote @newQuote="quotes.push($event)"></app-new-quote>
     <app-grid :quotes="quotes"></app-grid>
   </div>
 </template>
 
 <script>
-import quotesGrid from './components/QuoteGrid'
+import QuotesGrid from './components/QuoteGrid'
+import NewQuote from './components/NewQuote'
 export default {
   components: {
-    appGrid: quotesGrid
+    appGrid: QuotesGrid,
+    appNewQuote: NewQuote
   },
   data () {
     return {
