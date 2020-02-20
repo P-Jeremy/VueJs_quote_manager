@@ -31,6 +31,12 @@ export default {
 
   methods: {
     addQuote (txt) {
+      if (this.quotes.length >= this.maxQuotes) {
+        return alert('Max quotes exceeded')
+      }
+      if (!txt) {
+        return
+      }
       this.quotes.push(txt)
     },
     removeQuote (index) {
